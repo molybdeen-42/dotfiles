@@ -46,6 +46,49 @@ Scope {
 
             property int _topRefresh: 0
 
+            property Gradient activeGradient: RadialGradient {
+                focalX: 0
+                focalY: 0 
+                centerRadius: 50
+                GradientStop { position: 0; color: Theme.accent}
+                GradientStop { position: 0.27; color: Theme.accent }
+                GradientStop { position: 0.53; color: "#5f7890" }
+                GradientStop { position: 0.73; color: "#445668" }
+                GradientStop { position: 0.97; color: "#293441" }
+                GradientStop { position: 1; color: Theme.bg}
+            }
+
+            property Gradient inactiveGradient: RadialGradient {
+                focalX: 0
+                focalY: 0 
+                centerRadius: 100
+                GradientStop { position: 0; color: Theme.bg }
+            }
+
+            property Gradient activeTrayGradient: RadialGradient {
+                focalX: 0
+                focalY: 0 
+                centerRadius: 25
+                GradientStop { position: 0; color: Theme.accent}
+                GradientStop { position: 0.27; color: Theme.accent }
+                GradientStop { position: 0.53; color: "#5f7890" }
+                GradientStop { position: 0.73; color: "#445668" }
+                GradientStop { position: 0.97; color: "#293441" }
+                GradientStop { position: 1; color: Theme.bg}
+            }
+
+            property Gradient inactiveTrayGradient: RadialGradient {
+                focalX: 0
+                focalY: 0 
+                centerRadius: 25
+                GradientStop { position: 0; color: Qt.darker(Theme.accent, 1.2) }
+                GradientStop { position: 0.27; color: Qt.darker(Theme.accent, 1.2) }
+                GradientStop { position: 0.53; color: Qt.darker("#5f7890", 1.2) }
+                GradientStop { position: 0.73; color: Qt.darker("#445668", 1.2) }
+                GradientStop { position: 0.97; color: Qt.darker("#293441", 1.2) }
+                GradientStop { position: 1; color: Qt.darker(Theme.bg, 1.2) }
+            }
+
             function iconForClass(className) {
                 var map = {
                     "kitty": "\uf120",
@@ -166,7 +209,7 @@ Scope {
                                 }
 
                                 ShapePath {
-                                    fillColor: isActive ? Theme.accent : Theme.bg
+                                    fillGradient: isActive ? activeGradient : inactiveGradient
                                     strokeColor: Theme.border
                                     strokeWidth: borderThickness
 
@@ -505,7 +548,7 @@ Scope {
                             }
 
                             ShapePath {
-                                fillColor: isExpanded ? Theme.accentHover : Theme.accent
+                                fillGradient: isExpanded ? activeTrayGradient : inactiveTrayGradient
                                 strokeColor: Theme.border
                                 strokeWidth: borderThickness
 
