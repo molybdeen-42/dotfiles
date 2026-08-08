@@ -42,6 +42,7 @@ cat "$themepath/starship/starship.toml" > "$configpath/starship.toml"
 
 echo "Changing wallpaper..."
 cat "$themepath/wallpapers/hyprpaper.conf" > "$configpath/hypr/hyprpaper.conf"
+cat "$themepath/hypr/hyprlock.conf" > "$configpath/hypr/hyprlock.conf"
 awww img --transition-type grow --transition-duration 2 --transition-step 90 --transition-pos 0.8,0.7 -o eDP-1 "$themepath/wallpapers/${1}_2880x1920.png" &
 awww img --transition-type grow --transition-duration 2 --transition-step 90 --transition-pos 0.8,0.7 -o DP-11 "$themepath/wallpapers/${1}_2560x1440.png" &
 awww img --transition-type grow --transition-duration 2 --transition-step 90 --transition-pos 0.8,0.7 -o DP-9 "$themepath/wallpapers/${1}_1440x2560.png" &
