@@ -47,4 +47,5 @@ awww img --transition-type grow --transition-duration 2 --transition-step 90 --t
 awww img --transition-type grow --transition-duration 2 --transition-step 90 --transition-pos 0.8,0.7 -o DP-9 "$themepath/wallpapers/${1}_1440x2560.png" &
 wait
 
+echo ""
 echo "Theme successfully changed!"

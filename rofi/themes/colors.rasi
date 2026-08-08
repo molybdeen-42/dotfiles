@@ -1,11 +1,11 @@
-// Blindfold theme
+// Copper theme
 
 * {
-    bg: #0e1219;
-    border: #3a4862;
+    bg: #8D5D57;
+    border: #111626;
     text: #f0ece8;
     text-alt: #8a95a7;
-    accent: #7a9ab8;
-    accent-alt: #d45a5a;
-    accent-extra: #b88a70;
+    accent: #467362;
+    accent-alt: #401317;
+    accent-extra: #D9A796;
 }
