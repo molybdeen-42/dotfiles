@@ -183,15 +183,15 @@ hl.config({
         hover_icon_on_border = true,
         border_size = 2,
         col = {
-            active_border = { colors = { "rgba(1a0933ff)", "rgba(3730a3ff)", "rgba(0e7490ff)", "rgba(047857ff)", "rgba(22c55eff)" }, angle = 45 }, -- Active windows have a diagonal color shift from purple to green
-            inactive_border = "rgba(1c1d1faa)", -- Inactive windows display a gray border
+            active_border = { colors = { "rgba(1a0933ff)", "rgba(3730a3ff)", "rgba(0e7490ff)", "rgba(047857ff)", "rgba(22c55eff)" }, angle = 45 },
+            inactive_border = "rgba(1c1d1faa)",
         },
         gaps_out = 8,
         gaps_in = 4,
     },
     input = {
         touchpad = {
-            natural_scroll = true, -- Inverts scrolling on laptop touchpad
+            natural_scroll = true,
         },
     },
     -- Cursor
@@ -210,6 +210,17 @@ hl.config({
     },
 })
 
+-- Curves
+hl.curve( "switch", { type = "bezier", points = { {0.31, -0.43}, {0.53, 1.03} } } )
+hl.curve( "smooth", { type = "bezier", points = { {0.83, 0.44}, {0.34, 0.87} } } )
+
+-- Animations
+hl.animation( { leaf = "workspaces", enabled = true, speed = 7.5, bezier = "switch" } )
+hl.animation( { leaf = "windowsMove", enabled = true, speed = 3, bezier = "smooth" } )
+hl.animation( { leaf = "windowsIn", enabled = true, speed = 4, bezier = "smooth", style = "popin 10%" } )
+hl.animation( { leaf = "windowsOut", enabled = true, speed = 4, bezier = "smooth", style = "popin 10%" } )
+
+-- On start
 hl.on("hyprland.start", function()
     hl.exec_cmd("hyprpaper")
     hl.exec_cmd("hypridle")

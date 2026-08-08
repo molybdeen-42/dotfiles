@@ -13,7 +13,7 @@ import "../widgets/data"
 import "../../themes"
 import "../../popout"
 
-// The standard minimalistic bar
+// The minimalistic moldybar bar
 Scope {
     property bool isExpanded: true
     readonly property string networkType: Network.networkType
@@ -23,7 +23,8 @@ Scope {
 
         Scope {
             id: screenBorder
-        
+
+            // Standard variables
             required property var modelData
             readonly property int topThickness: 35
             readonly property int edgeThickness: 6
@@ -46,6 +47,7 @@ Scope {
 
             property int _topRefresh: 0
 
+            // Gradients
             property Gradient activeGradient: RadialGradient {
                 focalX: 0
                 focalY: 0 
@@ -89,22 +91,21 @@ Scope {
                 GradientStop { position: 1; color: Qt.darker(Theme.bg, 1.2) }
             }
 
+            // Application icons
             function iconForClass(className) {
                 var map = {
                     "kitty": "\uf120",
                     "codium": "\uf121",
                     "firefox": "\uf269",
                     "discord": "\uf392",
-                    "com.anthropic.claude-desktop": "\u{f1719}",
                     "osu!": "\u{f063c}",
-                    "proton mail": "\uf42f",
-                    "electron": "\uf456",
                     "virt-manager": "\ueb7b",
                 }
                 if (!className) return "\u{f0614}"
                 return map[className.toLowerCase()] || "\u{f0614}"
             }
 
+            // Timers
             Timer {
                 id: refreshTimer
                 interval: 1500
@@ -125,6 +126,7 @@ Scope {
                 }
             }
 
+            // Active monitor
             Connections {
                 target: Hyprland.focusedMonitor
                 function onActiveWorkspaceChanged() {
@@ -133,6 +135,7 @@ Scope {
                 }
             }  
 
+            // Workspaces
             PanelWindow {
                 screen: screenBorder.modelData
                 color: "transparent"
@@ -165,14 +168,15 @@ Scope {
                                 .sort((x, y) => x.id - y.id)
                             )
                             
-
                             Shape {
                                 id: wsShape
 
+                                // Variables to determine the shape of the widget
                                 property bool isFirst: index === 0
                                 property bool isLast: index === wsRepeater.count - 1
                                 property bool isActive: modelData === Hyprland.focusedMonitor.activeWorkspace
 
+                                // Icon for active application on workspace
                                 property string currentIcon: {
                                     var _dep = screenBorder._topRefresh
 
@@ -208,6 +212,7 @@ Scope {
                                     }
                                 }
 
+                                // Workspace widget shape
                                 ShapePath {
                                     fillGradient: isActive ? activeGradient : inactiveGradient
                                     strokeColor: Theme.border
@@ -262,6 +267,7 @@ Scope {
                         }
                     }
 
+                    // Clock widget
                     Shape {
                         id: clockShape
                         anchors.centerIn: parent
@@ -311,6 +317,7 @@ Scope {
                         }
                     }
 
+                    // Row of widgets
                     Shape {
                         id: widgetShape
                         implicitHeight: clockWidget.implicitHeight
@@ -328,6 +335,7 @@ Scope {
                             spacing: 16
                             height: clockWidget.height
 
+                            // Internet connection icon
                             Text {
                                 property string networkIcon: {
                                     if (networkType === "ethernet") return "󰈀";
@@ -343,6 +351,7 @@ Scope {
                                 leftPadding: 2
                             }
 
+                            // CPU temperature icon
                             Item {
                                 id: cpuTemp
                                 width: cpuRow.width
@@ -350,6 +359,7 @@ Scope {
 
                                 readonly property real temperature: Temperature.cpuTemperature
 
+                                // Color on icon
                                 readonly property color cpuColor: {
                                     if (cpuTemp.temperature >= 80) return Theme.notify
                                     if (cpuTemp.temperature >= 65) return Theme.accentHover
@@ -377,6 +387,7 @@ Scope {
                                 }
                             }
 
+                            // Battery charge icon
                             Item {
                                 id: battery
                                 width: batteryRow.width
@@ -389,6 +400,7 @@ Scope {
 
                                     var pct = power.percentage * 100
 
+                                    // Icons while charging
                                     if (power.state === UPowerDeviceState.Charging ||
                                         power.state === UPowerDeviceState.FullyCharged) {
                                         if (Math.round(pct) === 100) return "󰁹"
@@ -404,6 +416,7 @@ Scope {
                                         return "󰢜"
                                     }
 
+                                    // Icons while discharging
                                     if (Math.round(pct) === 100) return "󰁹"
                                     if (pct >= 90) return "󰁹"
                                     if (pct >= 80) return "󰂂"
@@ -417,6 +430,7 @@ Scope {
                                     return "󰁺"
                                 }
 
+                                // Color on icon
                                 readonly property color iconColor: {
                                     if (!battery.power) return Theme.widget
                                     if (Math.round(battery.power.percentage * 100) === 100) return Theme.widget
@@ -447,6 +461,7 @@ Scope {
                             }
                         }
 
+                        // Widgetrow shape
                         ShapePath {
                             fillColor: Theme.bg
                             strokeColor: Theme.border
@@ -483,6 +498,7 @@ Scope {
                         }
                     }
 
+                    // System tray
                     Shape {
                         id: tray
                         implicitHeight: clockWidget.implicitHeight
@@ -502,6 +518,7 @@ Scope {
                             }
                         }
 
+                        // Shape of extended tray
                         ShapePath {
                             fillColor: Theme.bg
                             strokeColor: Theme.border
@@ -537,6 +554,7 @@ Scope {
                             }
                         }
 
+                        // Chevron icon
                         Shape {
                             id: chevron
                             width: radius * 2
@@ -547,6 +565,7 @@ Scope {
                                 verticalCenter: parent.verticalCenter
                             }
 
+                            // Shape
                             ShapePath {
                                 fillGradient: isExpanded ? activeTrayGradient : inactiveTrayGradient
                                 strokeColor: Theme.border
@@ -595,6 +614,7 @@ Scope {
                             }
                         }
 
+                        // System tray entries
                         Row {
                             id: trayItems
                             spacing: itemSpacing
@@ -623,6 +643,7 @@ Scope {
                                     height: iconSize
                                     required property var modelData
 
+                                    // Tray entry size
                                     Image {
                                         anchors.fill: parent
                                         source: trayItem.modelData.icon
@@ -633,6 +654,7 @@ Scope {
                                         fillMode: Image.PreserveAspectFit
                                     }
 
+                                    // Mouse interaction on tray entries
                                     MouseArea {
                                         anchors.fill: parent
                                         acceptedButtons: Qt.LeftButton | Qt.MiddleButton | Qt.RightButton
