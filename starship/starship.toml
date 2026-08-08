@@ -10,28 +10,24 @@ scan_timeout = 10
 
 [username]
 format = "[$user]($style)"
-style_user = "bold green"
-style_root = "bold red"
+style_user = "bold #7a9ab8"
+style_root = "bold #d45a5a"
 show_always = true
-
 
 [hostname]
 format = "[$hostname]($style):"
-style = "bold purple"
+style = "bold #d45a5a"
 ssh_only = false
-
 
 [directory]
 format = "[ $path/ ]($style)"
-style = "bold cyan"
+style = "bold #5f7890"
 truncation_length = 3
 truncate_to_repo = true
 
-
 [git_branch]
 format = "at [$branch(:$remote_branch) ]($style)"
-style = "bold #5a4870"
-
+style = "bold #b88a70"
 
 [character]
 success_symbol = "[❯](brblue)"

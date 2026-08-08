@@ -52,12 +52,12 @@ Scope {
                 focalX: 0
                 focalY: 0 
                 centerRadius: 50
-                GradientStop { position: 0; color: Theme.accent}
-                GradientStop { position: 0.27; color: Theme.accent }
-                GradientStop { position: 0.53; color: "#5f7890" }
-                GradientStop { position: 0.73; color: "#445668" }
-                GradientStop { position: 0.97; color: "#293441" }
-                GradientStop { position: 1; color: Theme.bg}
+                GradientStop { position: 0; color: Theme.gradient1 }
+                GradientStop { position: 0.27; color: Theme.gradient1 }
+                GradientStop { position: 0.53; color: Theme.gradient2 }
+                GradientStop { position: 0.73; color: Theme.gradient3 }
+                GradientStop { position: 0.97; color: Theme.gradient4 }
+                GradientStop { position: 1; color: Theme.gradient5 }
             }
 
             property Gradient inactiveGradient: RadialGradient {
@@ -71,24 +71,24 @@ Scope {
                 focalX: 0
                 focalY: 0 
                 centerRadius: 25
-                GradientStop { position: 0; color: Theme.accent}
-                GradientStop { position: 0.27; color: Theme.accent }
-                GradientStop { position: 0.53; color: "#5f7890" }
-                GradientStop { position: 0.73; color: "#445668" }
-                GradientStop { position: 0.97; color: "#293441" }
-                GradientStop { position: 1; color: Theme.bg}
+                GradientStop { position: 0; color: Theme.gradient1 }
+                GradientStop { position: 0.27; color: Theme.gradient1 }
+                GradientStop { position: 0.53; color: Theme.gradient2 }
+                GradientStop { position: 0.73; color: Theme.gradient3 }
+                GradientStop { position: 0.97; color: Theme.gradient4 }
+                GradientStop { position: 1; color: Theme.gradient5 }
             }
 
             property Gradient inactiveTrayGradient: RadialGradient {
                 focalX: 0
                 focalY: 0 
                 centerRadius: 25
-                GradientStop { position: 0; color: Qt.darker(Theme.accent, 1.2) }
-                GradientStop { position: 0.27; color: Qt.darker(Theme.accent, 1.2) }
-                GradientStop { position: 0.53; color: Qt.darker("#5f7890", 1.2) }
-                GradientStop { position: 0.73; color: Qt.darker("#445668", 1.2) }
-                GradientStop { position: 0.97; color: Qt.darker("#293441", 1.2) }
-                GradientStop { position: 1; color: Qt.darker(Theme.bg, 1.2) }
+                GradientStop { position: 0; color: Qt.darker(Theme.gradient1, 1.2) }
+                GradientStop { position: 0.27; color: Qt.darker(Theme.gradient1, 1.2) }
+                GradientStop { position: 0.53; color: Qt.darker(Theme.gradient2, 1.2) }
+                GradientStop { position: 0.73; color: Qt.darker(Theme.gradient3, 1.2) }
+                GradientStop { position: 0.97; color: Qt.darker(Theme.gradient4, 1.2) }
+                GradientStop { position: 1; color: Qt.darker(Theme.gradient5, 1.2) }
             }
 
             // Application icons
@@ -347,7 +347,7 @@ Scope {
                                 text: networkIcon
                                 font.family: Theme.fontFamily
                                 font.pixelSize: Theme.fontSizeLarge
-                                color: "#e8e4e0"
+                                color: Theme.widget
                                 leftPadding: 2
                             }
 

@@ -183,7 +183,16 @@ hl.config({
         hover_icon_on_border = true,
         border_size = 2,
         col = {
-            active_border = { colors = { "rgba(1a0933ff)", "rgba(3730a3ff)", "rgba(0e7490ff)", "rgba(047857ff)", "rgba(22c55eff)" }, angle = 45 },
+            active_border = { 
+                colors = { 
+                    "rgba(7a9ab8ff)", 
+                    "rgba(5f7890ff)", 
+                    "rgba(445668ff)", 
+                    "rgba(293441ff)", 
+                    "rgba(0e1219ff)" 
+                }, 
+                angle = 45 
+            },
             inactive_border = "rgba(1c1d1faa)",
         },
         gaps_out = 8,
