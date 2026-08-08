@@ -32,7 +32,7 @@ function fish_greeting
         -e "s/[.:\-]/$t&$n/g"
 
     echo -n "Welcome back "
-    set_color --bold 7a9ab8
+    set_color --bold purple
     echo -n $USER
     set_color normal
     echo "!"

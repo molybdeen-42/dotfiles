@@ -1,0 +1,35 @@
+# Copper theme
+
+format = """
+$username@$hostname\
+$directory\
+$git_branch\
+$character
+"""
+
+scan_timeout = 10
+
+[username]
+format = "[$user]($style)"
+style_user = "bold #401317" # User color
+style_root = "bold #d45a5a" # root user color
+show_always = true
+
+[hostname]
+format = "[$hostname]($style):"
+style = "bold #8D5D57" # Host color
+ssh_only = false
+
+[directory]
+format = "[ $path/ ]($style)"
+style = "bold #467362" # Directory color
+truncation_length = 3
+truncate_to_repo = true
+
+[git_branch]
+format = "at [$branch(:$remote_branch) ]($style)"
+style = "bold #D9A796" # Git branch color
+
+[character]
+success_symbol = "[❯](brblue)"
+error_symbol = "[❯](brred)"
