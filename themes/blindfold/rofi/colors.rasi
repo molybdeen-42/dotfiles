@@ -1,0 +1,11 @@
+// Blindfold theme
+
+* {
+    bg: #0e1219;
+    border: #3a4862;
+    text: #f0ece8;
+    text-alt: #8a95a7;
+    accent: #7a9ab8;
+    accent-alt: #d45a5a;
+    accent-extra: #b88a70;
+}

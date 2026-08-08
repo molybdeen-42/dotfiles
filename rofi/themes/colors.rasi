@@ -1,0 +1,11 @@
+// Emerald theme
+
+* {
+    bg: #8D5D57;
+    border: #111626;
+    text: #f0ece8;
+    text-alt: #8a95a7;
+    accent: #467362;
+    accent-alt: #401317;
+    accent-extra: #D9A796;
+}

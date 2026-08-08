@@ -7,16 +7,16 @@ function fish_greeting
     set -l n (set_color normal) # Regular text color
 
     echo "        
-                     ‐ 
+                     ; 
                      = 
                     ‐=‐
                     ===
              /≈≈   ‐===‐
-             ≈≈≈:  ====
-            ≈≈/:--====
-         ‐==::-==-:-=
-       ≊:=====:-===--
-      ≊≊:======:-=꞉/≈≈
+             ≈≈≈   ====
+            ≈≈/:--≊‑=;
+         ‐==::-‑≊-:≊‑
+       ≊:=====:-≊≊‑--
+      ≊≊:======:-≊꞉/≈≈
       --========:-≈≈≈≈
       =====---===:≈≈≈/
       --==:≊≊≊:=‐===‐
@@ -25,7 +25,7 @@ function fish_greeting
         -≈=---=
          -
     " | sed \
-        -e "s/[‐=]/$y&$n/g" \
+        -e "s/[‐=;]/$y&$n/g" \
         -e "s/[≈/]/$w&$n/g" \
         -e "s/[‑≊]/$i&$n/g" \
         -e "s/[,꞉]/$b&$n/g" \
@@ -36,7 +36,11 @@ function fish_greeting
     echo -n $USER
     set_color normal
     echo "!"
-    echo "This is your personal assistant, Shellsparce." 
+    echo -n "This is your personal assistant, "
+    set_color FFD700
+    echo -n "Shellsparce"
+    set_color normal
+    echo "." 
 end
 
 # Large shellsparce

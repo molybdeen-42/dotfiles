@@ -1,0 +1,48 @@
+@import "colors"
+
+configuration {
+    display-drun: "Launch: ";
+    font: "JetBrainsMono Nerd Font";
+    modi: "drun";
+    show-icons: true;
+}
+
+* {
+    background-color: @bg;
+    text-color: @text;
+}
+
+element selected {
+    text-color: @text;
+    background-color: transparent;
+    border-color: @accent-alt;
+    border: 1px 75px 1px 1px;
+    border-radius: 3;
+    padding: 0;
+}
+
+window {
+    border: 3px;
+    border-color: @border;
+    border-radius: 12px;
+    background-color: @bg;
+    width: 500px;
+    padding: 12px;
+}
+
+inputbar {
+    children: [prompt, entry];
+    border: 2px;
+    border-radius: 12px;
+    border-color: @border;
+    padding: 10px;
+}
+
+entry {
+    placeholder: "";
+}
+
+listview {
+    margin: 8px 0px 0px 0px;
+    spacing: 8px;
+}
