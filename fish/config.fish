@@ -2,7 +2,7 @@
 starship init fish | source
 
 # Text editor
-set -gx EDITOR nano
+set -gx EDITOR vim
 
 # PATH
 fish_add_path ~/.local/bin

@@ -1,15 +1,15 @@
 
-# Molybdeen's dotfiles
+# molybdeen's dotfiles
 
-This hyprland configuration is made to be used with keyboard mainly. There are however some configurations made to make moving windows using mice possible.
+Welcome to my dotfiles! :) Please be sure to implement your screen layout in `/hypr/hyprland.lua
 
-## Keybinds
+## some essential keybinds
 
 The following keybinds will be used to navigate and move between windows and workspaces:
-- Move between windows: `SUPER + Directional Arrow`
-- Swap windows: `SUPER + ALT + Directional Arrow`
-- Move windows between different displays: `SUPER + SHIFT + Directional Arrow`
-- Move between workspaces on the active screen: `SUPER + CTRL + Directional Arrow (Left or Right)`
+- Move between windows: `SUPER + [HJKL]`
+- Swap windows: `SUPER + ALT + [HJKL]`
+- Move windows between different displays: `SUPER + SHIFT + [HJKL]`
+- Move between workspaces on the active screen: `SUPER + CTRL + [HL]`
 - Additionally one may use `SUPER + (0-9)` to switch between workspaces directly
 
 The following keybinds are also essential:
@@ -18,20 +18,11 @@ The following keybinds are also essential:
 - Application launcher: `SUPER + M`
 - Close active window: `SUPER + Q`
 
-Lastly, these submaps have been included:
-- Resizing submap: `SUPER + R`
-    - Resize in direction with: `WASD`
-    - Move between windows with: `Directional Arrows`
 
+## shellsparce
 
-## Other features
+Shellsparce is your assistant in the terminal! Use `shellsparce help` to find out what shellsparce can do for you!
 
-Animated switching between workspaces and windows.
-
-
-## Planned features
-
-Quickshell configuration\
-Kitty configuration\
-Muliple themes\
-Theme switcher
+Examples:
+- `shellsparce theme current` - Shows you the current theme.
+- `shellsparce theme change copper` - Changes the theme to the "copper" theme.

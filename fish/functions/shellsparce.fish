@@ -14,12 +14,15 @@ function shellsparce --description "Your personal shell assistant!"
         echo ""
         echo "help: Will show you this menu."
         echo ""
+        echo "split: Creates two side-by-side terminals in fullscreen."
+        echo "code: Creates a grid of three terminals in fullscreen."
+        echo ""
         echo "theme"
         echo "  current: Shows the current theme."
         echo "  themes: Shows the available themes."
         echo "  change: Allows you to change your theme."
-        echo "      blindfold"
-        echo "      copper"
+        echo "    blindfold"
+        echo "    copper"
         return
     end
 
