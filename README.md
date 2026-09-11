@@ -1,7 +1,7 @@
 
 # molybdeen's dotfiles
 
-Welcome to my dotfiles! :) Please be sure to implement your screen layout in `/hypr/hyprland.lua
+Welcome to my dotfiles! :) Please be sure to implement your screen layout in `/hypr/hyprland.lua`
 
 ## some essential keybinds
 
