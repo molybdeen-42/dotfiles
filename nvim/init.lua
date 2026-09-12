@@ -38,6 +38,11 @@ local plugins = {
 			fuzzy = { implementation = "lua" },
 		},
 	},
+	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		opts = {},
+	},
 }
 local opts = {}
 
@@ -65,7 +70,7 @@ require("nvim-tree").setup({
 	},
 })
 
-vim.keymap.set("n", "<leader>f", function()
+vim.keymap.set("n", "<leader>fs", function()
 	require("nvim-tree.api").tree.toggle()
 end, { desc = "Toggle file explorer" })
 

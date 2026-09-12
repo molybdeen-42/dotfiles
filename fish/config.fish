@@ -8,3 +8,5 @@ set -gx EDITOR vim
 fish_add_path ~/.local/bin
 
 # Aliases
+alias v "vim"
+alias nv "nvim"
