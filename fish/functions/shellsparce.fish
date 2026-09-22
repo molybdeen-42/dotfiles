@@ -14,7 +14,6 @@ function shellsparce --description "Your personal shell assistant!"
         echo ""
         echo "help: Will show you this menu."
         echo ""
-        echo "split: Creates two side-by-side terminals in fullscreen."
         echo "code: Creates a grid of three terminals in fullscreen."
         echo ""
         echo "theme"
@@ -44,19 +43,14 @@ function shellsparce --description "Your personal shell assistant!"
 
             switch "$theme"
                 case "blindfold" "copper"
-                    /bin/bash "$HOME/.config/themes/change_theme.sh" $theme > /dev/null
+                    /bin/bash "$HOME/.config/themes/change_theme.sh" $theme &> /dev/null
                     return
             end 
         end
     end
 
     if test "$option" = "code"
-        kitty --session code_grid.conf --start-as=fullscreen > /dev/null 2&>1; disown
-	return
-    end
-
-    if test "$option" = "split"
-        kitty --session split_grid.conf --start-as=fullscreen > /dev/null 2&>1; disown
+        nohup kitty --session code_grid.conf --start-as=fullscreen &> /dev/null &; disown; exit
 	return
     end
 

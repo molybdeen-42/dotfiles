@@ -21,7 +21,8 @@ hl.bind(mainMod .. " + F8", hl.dsp.exec_cmd("playerctl play-pause"), { locked = 
 
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("hyprshot -m region"))
 
-hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + I", hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + ALT + I", hl.dsp.exec_cmd(terminal .. " --start-as fullscreen"))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd(applauncher))

@@ -24,3 +24,14 @@ protonvpn-app
 vim
 sed
 ttf-jetbrains-mono-nerd
+tree-sitter
+tree-sitter-cli
+lua-language-server
+bash-language-server
+pyright
+clang
+stylua
+shfmt
+python-black
+python-isort
+jdtls
