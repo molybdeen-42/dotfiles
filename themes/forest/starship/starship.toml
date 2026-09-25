@@ -1,0 +1,59 @@
+# Forest theme
+
+format = """
+$username@$hostname\
+$directory\
+$git_branch\
+$character
+"""
+
+right_format = "$cmd_duration$status$jobs$time"
+
+scan_timeout = 10
+
+[username]
+format = "[$user]($style)"
+style_user = "bold #4a7c59"
+style_root = "bold #ff6b35"
+show_always = true
+
+[hostname]
+format = "[$hostname]($style):"
+style = "bold #ffd166"
+ssh_only = false
+
+[directory]
+format = "[ $path/ ]($style)"
+style = "bold #d4a373"
+truncation_length = 3
+truncate_to_repo = true
+
+[git_branch]
+format = "at [$branch(:$remote_branch) ]($style)"
+style = "bold #4a7c59"
+
+[character]
+success_symbol = "[❯](brblue)"
+error_symbol = "[❯](brred)"
+
+[time]
+disabled = false
+style = "#8ba98c"
+format = "[$time]($style) "
+time_format = "%H:%M:%S"
+
+[cmd_duration]
+min_time = 2000
+style = "#4a7c59"
+format = "took [$duration]($style) "
+
+[status]
+disabled = false
+style = "#ff6b35"
+format = "[$symbol $maybe_status]($style) "
+
+[jobs]
+threshold = 1
+symbol = "⚙ "
+style = "#4a7c59"
+format = "[$number$symbol]($style)"

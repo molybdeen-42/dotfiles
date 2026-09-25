@@ -4,5 +4,5 @@ import Quickshell
 import "bar/styles"
 
 Scope {
-    MoldyBar {}
+    FullBar {}
 }

@@ -14,3 +14,14 @@ vim.opt.rtp:prepend(lazypath)
 
 require("vim-settings")
 require("lazy").setup("plugins")
+
+local theme = require("theme")
+theme.apply()
+
+vim.api.nvim_create_autocmd("UIEnter", {
+	callback = function()
+		theme.apply()
+	end,
+	once = true,
+})
+

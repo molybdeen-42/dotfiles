@@ -46,8 +46,8 @@ hl.config({
             },
             inactive_border = inactive,
         },
-        gaps_out = 8,
-        gaps_in = 4,
+        gaps_out = 0,
+        gaps_in = 0,
     },
     input = {
         touchpad = {
@@ -61,7 +61,7 @@ hl.config({
     },
     -- Decoration
     decoration = {
-        rounding = 5,
+        rounding = 0,
         border_part_of_window = true,
         inactive_opacity = 0.9,
         active_opacity = 1,

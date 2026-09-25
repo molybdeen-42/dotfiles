@@ -11,15 +11,15 @@ QtObject {
     readonly property int fontSizeNormal: 14
     readonly property int fontSizeLarge:  16
 
-    readonly property color bg: "#111626"
-    readonly property color widget: "#e8e4e0" // Fixed
-    readonly property color border: "#D9A796"
-    readonly property color textMuted: "#8a95a7" // Fixed
-    readonly property color text: "#f0ece8" // Fixed
-    readonly property color accent: "#467362"
-    readonly property color warn: "#b88a70" // Fixed
-    readonly property color notify: "#d45a5a" // Fixed
-    readonly property color positive: "#5a8a7a" // Fixed
+    readonly property color bg: "#131722"
+    readonly property color widget: "#e8e4e0"
+    readonly property color border: "#3a4862"
+    readonly property color textMuted: "#8a95a7"
+    readonly property color text: "#f0ece8"
+    readonly property color accent: "#c08850"
+    readonly property color warn: "#b88a70"
+    readonly property color notify: "#d45a5a"
+    readonly property color positive: "#5a8a7a"
 
     readonly property color gradient1: "#401317"
     readonly property color gradient2: "#663837"

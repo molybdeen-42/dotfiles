@@ -1,3 +1,4 @@
 singleton Temperature Temperature.qml
 singleton Time Time.qml
 singleton Network Network.qml
+singleton Battery Battery.qml

@@ -7,29 +7,53 @@ $git_branch\
 $character
 """
 
+right_format = "$cmd_duration$status$jobs$time"
+
 scan_timeout = 10
 
 [username]
 format = "[$user]($style)"
-style_user = "bold #7a9ab8" # User color
-style_root = "bold #d45a5a" # root user color
+style_user = "bold #7a9ab8"
+style_root = "bold #d45a5a"
 show_always = true
 
 [hostname]
 format = "[$hostname]($style):"
-style = "bold #d45a5a" # Host color
+style = "bold #d45a5a"
 ssh_only = false
 
 [directory]
 format = "[ $path/ ]($style)"
-style = "bold #5f7890" # Directory color
+style = "bold #5f7890"
 truncation_length = 3
 truncate_to_repo = true
 
 [git_branch]
 format = "at [$branch(:$remote_branch) ]($style)"
-style = "bold #b88a70" # Git branch color
+style = "bold #b88a70"
 
 [character]
 success_symbol = "[❯](brblue)"
 error_symbol = "[❯](brred)"
+
+[time]
+disabled = false
+style = "#8a95a7"
+format = "[$time]($style) "
+time_format = "%H:%M:%S"
+
+[cmd_duration]
+min_time = 2000
+style = "#7a9ab8"
+format = "took [$duration]($style) "
+
+[status]
+disabled = false
+style = "#d45a5a"
+format = "[$symbol $maybe_status]($style) "
+
+[jobs]
+threshold = 1
+symbol = "⚙ "
+style = "#7a9ab8"
+format = "[$number$symbol]($style)"

@@ -22,7 +22,6 @@ hl.bind(mainMod .. " + F8", hl.dsp.exec_cmd("playerctl play-pause"), { locked = 
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("hyprshot -m region"))
 
 hl.bind(mainMod .. " + I", hl.dsp.exec_cmd(terminal))
-hl.bind(mainMod .. " + ALT + I", hl.dsp.exec_cmd(terminal .. " --start-as fullscreen"))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd(applauncher))
@@ -47,6 +46,8 @@ hl.bind(screenChangeMod .. " + l", hl.dsp.window.move({ monitor = "r" }))
 
 hl.bind("F11", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle" }))
 
+hl.bind(mainMod .. " + B", hl.dsp.global("quickshell:toggleBar"))
+
 hl.bind(mainMod .. " + 1", hl.dsp.focus({ workspace = 1 }))
 hl.bind(mainMod .. " + 2", hl.dsp.focus({ workspace = 2 }))
 hl.bind(mainMod .. " + 3", hl.dsp.focus({ workspace = 3 }))
@@ -64,13 +65,10 @@ hl.bind(workspaceMod .. " + l", hl.dsp.focus({ workspace = "m+1" }))
 hl.bind(workspaceMod .. " + N", hl.dsp.workspace.toggle_special("scratchpad"))
 hl.bind(workspaceMod .. " + R", hl.dsp.exec_cmd("hyprctl reload"))
 
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.global("quickshell:togglePopoutSliderMenu"))
-
 -- Submaps
 hl.bind(mainMod .. " + SHIFT + R", hl.dsp.submap("resize"))
 
 hl.define_submap("resize", function()
-
     hl.bind("A", hl.dsp.window.resize({ x = -10, y = 0, relative = true }), { repeating = true })
     hl.bind("D", hl.dsp.window.resize({ x = 10, y = 0, relative = true }), { repeating = true })
     hl.bind("S", hl.dsp.window.resize({ x = 0, y = 10, relative = true }), { repeating = true })

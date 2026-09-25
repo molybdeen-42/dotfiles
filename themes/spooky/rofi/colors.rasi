@@ -1,0 +1,11 @@
+// Spooky theme
+
+* {
+    bg: #0a0e17;
+    border: #4a4e69;
+    text: #e9eef5;
+    text-alt: #8a8fa8;
+    accent: #d16b4f;
+    accent-alt: #b83a3a;
+    accent-extra: #e8a87c;
+}

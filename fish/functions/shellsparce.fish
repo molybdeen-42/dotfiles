@@ -18,10 +18,13 @@ function shellsparce --description "Your personal shell assistant!"
         echo ""
         echo "theme"
         echo "  current: Shows the current theme."
+	echo "  reload: Reload the current theme."
         echo "  themes: Shows the available themes."
         echo "  change: Allows you to change your theme."
         echo "    blindfold"
         echo "    copper"
+	echo "    spooky"
+	echo "    forest"
         return
     end
 
@@ -33,8 +36,13 @@ function shellsparce --description "Your personal shell assistant!"
             return
         end
 
+	if test "$functionality" = "reload"
+		/bin/bash "$HOME/.config/themes/change_theme.sh" $(cat "$HOME/.config/themes/current_theme.txt") -r &> /dev/null
+		return
+	end
+
         if test "$functionality" = "themes"
-            echo "The currently supported themes are: blindfold & copper"
+            echo "The currently supported themes are: blindfold, copper, spooky & forest"
             return
         end
 
@@ -42,7 +50,7 @@ function shellsparce --description "Your personal shell assistant!"
             set -l theme $argv[3]
 
             switch "$theme"
-                case "blindfold" "copper"
+                case "blindfold" "copper" "spooky" "forest"
                     /bin/bash "$HOME/.config/themes/change_theme.sh" $theme &> /dev/null
                     return
             end 
