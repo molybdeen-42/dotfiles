@@ -1,0 +1,13 @@
+// Moon theme
+
+* {
+    bg: #141726;
+    border: #3a4266;
+    text: #e2e8f4;
+    text-alt: #8a94b8;
+    accent: #7095cc;
+    accent-alt: #c95f5f;
+    accent-extra: #b8a45f;
+    accent-alt-alpha: #7095cc33;
+    bg-alpha: #141726E6;
+}

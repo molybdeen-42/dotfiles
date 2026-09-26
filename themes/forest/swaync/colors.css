@@ -1,0 +1,10 @@
+/* Forest theme */
+
+@define-color bg #1c1610;
+@define-color border #6e664e;
+@define-color text #e8f0e4;
+@define-color text-alt #8ba98c;
+@define-color accent #4a7c59;
+@define-color accent-alt #ff6b35;
+@define-color accent-extra #d4a373;
+@define-color bg-alpha #1c1610E6;

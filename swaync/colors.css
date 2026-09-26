@@ -1,0 +1,10 @@
+/* Mirror theme */
+
+@define-color bg #12100d;
+@define-color border #3a3226;
+@define-color text #e6e0d4;
+@define-color text-alt #92896e;
+@define-color accent #b39a5f;
+@define-color accent-alt #b85a4a;
+@define-color accent-extra #b08560;
+@define-color bg-alpha #12100dE6;

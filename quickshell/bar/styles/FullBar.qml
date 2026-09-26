@@ -29,10 +29,11 @@ Scope {
 	readonly property int extendActive: 6
 
 	// Gradients
-	readonly property Gradient activeGradient: RadialGradient {
-    		focalX: 0
-    		focalY: 0
-    		centerRadius: 50
+	readonly property Gradient activeGradient: LinearGradient {
+    		x1: 0
+    		y1: 0
+    		x2: root.pillWidth + root.extendActive
+    		y2: 0
     		GradientStop { position: 0; color: Theme.gradient1 }
     		GradientStop { position: 0.25; color: Theme.gradient1 }
     		GradientStop { position: 0.50; color: Theme.gradient2 }

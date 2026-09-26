@@ -23,8 +23,11 @@ function shellsparce --description "Your personal shell assistant!"
         echo "  change: Allows you to change your theme."
         echo "    blindfold"
         echo "    copper"
-	echo "    spooky"
 	echo "    forest"
+	echo "    city"
+	echo "    frog"
+	echo "    mirror"
+	echo "    moon"
         return
     end
 
@@ -42,16 +45,17 @@ function shellsparce --description "Your personal shell assistant!"
 	end
 
         if test "$functionality" = "themes"
-            echo "The currently supported themes are: blindfold, copper, spooky & forest"
+            echo "The currently supported themes are: blindfold, copper, spooky, forest, city, frog, mirror & moon"
             return
         end
 
         if test "$functionality" = "change"
             set -l theme $argv[3]
+	    set -l flag $argv[4]
 
             switch "$theme"
-                case "blindfold" "copper" "spooky" "forest"
-                    /bin/bash "$HOME/.config/themes/change_theme.sh" $theme &> /dev/null
+                case "blindfold" "copper" "forest" "city" "frog" "mirror" "moon"
+                    /bin/bash "$HOME/.config/themes/change_theme.sh" $theme $flag &> /dev/null
                     return
             end 
         end

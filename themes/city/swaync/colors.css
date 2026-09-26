@@ -1,0 +1,10 @@
+/* City theme */
+
+@define-color bg #131415;
+@define-color border #38484C;
+@define-color text #EBE7D7;
+@define-color text-alt #8E8D74;
+@define-color accent #C99F75;
+@define-color accent-alt #718856;
+@define-color accent-extra #CFA6A1;
+@define-color bg-alpha #131415E6;

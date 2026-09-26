@@ -1,11 +1,13 @@
 // Forest theme
 
 * {
-    bg: #1a2419;
-    border: #4a5d4a;
+    bg: #1c1610;
+    border: #6e664e;
     text: #e8f0e4;
     text-alt: #8ba98c;
     accent: #4a7c59;
     accent-alt: #ff6b35;
     accent-extra: #d4a373;
+    accent-alt-alpha: #ff6b3533;
+    bg-alpha: #1c1610E6;
 }

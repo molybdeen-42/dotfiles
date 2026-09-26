@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("vim-settings")
 require("lazy").setup("plugins")
+require("theme-monitor")
 
 local theme = require("theme")
 theme.apply()

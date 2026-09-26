@@ -15,10 +15,19 @@ fi
 if [[ "$1" == "copper" ]]; then
 	exists="true"
 fi
-if [[ "$1" == "spooky" ]]; then
+if [[ "$1" == "forest" ]]; then
 	exists="true"
 fi
-if [[ "$1" == "forest" ]]; then
+if [[ "$1" == "city" ]]; then
+	exists="true"
+fi
+if [[ "$1" == "frog" ]]; then
+	exists="true"
+fi
+if [[ "$1" == "mirror" ]]; then
+	exists="true"
+fi
+if [[ "$1" == "moon" ]]; then
 	exists="true"
 fi
 if [[ $exists == "false" ]]; then
@@ -51,21 +60,30 @@ cat "$themepath/starship/starship.toml" >"$configpath/starship.toml"
 echo "Switching nvim theme..."
 cat "$themepath/nvim/theme.lua" >"$configpath/nvim/lua/theme.lua"
 
+echo "Switching swaync theme..."
+cat "$themepath/swaync/colors.css" >"$configpath/swaync/colors.css"
+
 cat "$themepath/wallpapers/hyprpaper.conf" >"$configpath/hypr/hyprpaper.conf"
 cat "$themepath/hypr/hyprlock.conf" >"$configpath/hypr/hyprlock.conf"
 
+swaync-client -rs
+
 if [[ "$2" == "-r" ]]; then
+	awww img -o eDP-1 "$themepath/wallpapers/$1_1_2880x1920.png" &
+	awww img -o DP-11 "$themepath/wallpapers/$1_1_2560x1440.png" &
+	awww img -o DP-9 "$themepath/wallpapers/$1_1_2560x1440.png" &
+	wait
+	echo ""
 	echo "Reloading completed"
 	exit
 fi
 
-cat "$themepath/wallpapers/hyprpaper.conf" >"$configpath/hypr/hyprpaper.conf"
-cat "$themepath/hypr/hyprlock.conf" >"$configpath/hypr/hyprlock.conf"
-echo "Wallpapers changed"
-awww img --transition-type grow --transition-duration 2 --transition-step 90 --transition-pos 0.8,0.7 -o eDP-1 "$themepath/wallpapers/${1}_1_2880x1920.png" &
-awww img --transition-type grow --transition-duration 2 --transition-step 90 --transition-pos 0.8,0.7 -o DP-11 "$themepath/wallpapers/${1}_1_2560x1440.png" &
-awww img --transition-type grow --transition-duration 2 --transition-step 90 --transition-pos 0.8,0.7 -o DP-9 "$themepath/wallpapers/${1}_1_1440x2560.png" &
+awww img --transition-type grow --transition-duration 2 --transition-step 90 --transition-pos 0.8,0.7 -o eDP-1 "$themepath/wallpapers/$1_1_2880x1920.png" &
+awww img --transition-type grow --transition-duration 2 --transition-step 90 --transition-pos 0.8,0.7 -o DP-11 "$themepath/wallpapers/$1_1_2560x1440.png" &
+awww img --transition-type grow --transition-duration 2 --transition-step 90 --transition-pos 0.8,0.7 -o DP-9 "$themepath/wallpapers/$1_1_1440x2560.png" &
 wait
+
+echo "Wallpapers changed"
 
 echo ""
 echo "Theme successfully changed!"

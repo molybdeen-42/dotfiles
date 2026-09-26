@@ -6,6 +6,8 @@
     text: #f0ece8;
     text-alt: #8a95a7;
     accent: #c08850;
-    accent-alt: #401317;
+    accent-alt: #43a08c;
     accent-extra: #D9A796;
+    accent-alt-alpha: #43a08c33;
+    bg-alpha: #131722E6;
 }

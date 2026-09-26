@@ -1,0 +1,10 @@
+/* Copper theme */
+
+@define-color bg #131722;
+@define-color border #3a4862;
+@define-color text #f0ece8;
+@define-color text-alt #8a95a7;
+@define-color accent #c08850;
+@define-color accent-alt #43a08c;
+@define-color accent-extra #D9A796;
+@define-color bg-alpha #131722E6;

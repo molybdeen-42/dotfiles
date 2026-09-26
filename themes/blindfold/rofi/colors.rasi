@@ -8,4 +8,6 @@
     accent: #7a9ab8;
     accent-alt: #d45a5a;
     accent-extra: #b88a70;
+    accent-alt-alpha: #d45a5a33;
+    bg-alpha: #0e1219E6;
 }

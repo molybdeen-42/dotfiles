@@ -1,5 +1,10 @@
+@import url("colors.css");
+
 .notification-row .notification-background .notification {
-background: #0e1219;
-border: 2px solid #3a4862;
-color: #f0ece8;
+	background: @bg-alpha;
+	border: 2px solid @border;
+	border-radius: 0px;
+	padding: 10px;
+	color: @text;
+	font: 12px "JetBrainsMono Nerd Font";
 }

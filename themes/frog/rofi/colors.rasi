@@ -1,0 +1,13 @@
+// Frog theme
+
+* {
+    bg: #0d130e;
+    border: #3a5a48;
+    text: #ecf0e6;
+    text-alt: #8fa192;
+    accent: #7aa050;
+    accent-alt: #c95a4a;
+    accent-extra: #ce9c1b;
+    accent-alt-alpha: #7aa05033;
+    bg-alpha: #0d130eE6;
+}

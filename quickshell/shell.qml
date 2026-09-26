@@ -2,7 +2,9 @@
 
 import Quickshell
 import "bar/styles"
+import "components"
 
 Scope {
-    FullBar {}
+	FullBar {}
+	ThemeSwitcher {}
 }

@@ -1,0 +1,59 @@
+# City theme
+
+format = """
+$username@$hostname\
+$directory\
+$git_branch\
+$character
+"""
+
+right_format = "$cmd_duration$status$jobs$time"
+
+scan_timeout = 10
+
+[username]
+format = "[$user]($style)"
+style_user = "bold #A5618B"
+style_root = "bold #9B3E4B"
+show_always = true
+
+[hostname]
+format = "[$hostname]($style):"
+style = "bold #C1789F"
+ssh_only = false
+
+[directory]
+format = "[ $path/ ]($style)"
+style = "bold #C99F75"
+truncation_length = 3
+truncate_to_repo = true
+
+[git_branch]
+format = "at [$branch(:$remote_branch) ]($style)"
+style = "bold #CFA6A1"
+
+[character]
+success_symbol = "[❯](brblue)"
+error_symbol = "[❯](brred)"
+
+[time]
+disabled = false
+style = "#8E8D74"
+format = "[$time]($style) "
+time_format = "%H:%M:%S"
+
+[cmd_duration]
+min_time = 2000
+style = "#A39A74"
+format = "took [$duration]($style) "
+
+[status]
+disabled = false
+style = "#9B3E4B"
+format = "[$symbol $maybe_status]($style) "
+
+[jobs]
+threshold = 1
+symbol = "⚙ "
+style = "#C99F75"
+format = "[$number$symbol]($style)"

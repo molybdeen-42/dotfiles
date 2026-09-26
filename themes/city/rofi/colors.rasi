@@ -1,0 +1,13 @@
+// City theme
+
+* {
+    bg: #131415;
+    border: #38484C;
+    text: #EBE7D7;
+    text-alt: #8E8D74;
+    accent: #C99F75;
+    accent-alt: #718856;
+    accent-extra: #CFA6A1;
+    accent-alt-alpha: #71885633;
+    bg-alpha: #131415E6;
+}

@@ -1,0 +1,10 @@
+/* Frog theme */
+
+@define-color bg #0d130e;
+@define-color border #3a5a48;
+@define-color text #ecf0e6;
+@define-color text-alt #8fa192;
+@define-color accent #7aa050;
+@define-color accent-alt #c95a4a;
+@define-color accent-extra #ce9c1b;
+@define-color bg-alpha #0d130eE6;
