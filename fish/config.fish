@@ -10,3 +10,6 @@ fish_add_path ~/.local/bin
 # Aliases
 alias v "vim"
 alias nv "nvim"
+alias p "python3"
+alias p3 "python3"
+alias p2 "python2"

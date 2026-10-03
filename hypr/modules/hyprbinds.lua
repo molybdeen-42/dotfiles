@@ -48,6 +48,7 @@ hl.bind("F11", hl.dsp.window.fullscreen({ mode = "fullscreen", action = "toggle"
 
 hl.bind(mainMod .. " + B", hl.dsp.global("quickshell:toggleBar"))
 hl.bind(mainMod .. " + T", hl.dsp.global("quickshell:themeSwitcher"))
+hl.bind(mainMod .. " + R", hl.dsp.global("quickshell:musicMenu"))
 
 hl.bind(mainMod .. " + 1", hl.dsp.focus({ workspace = 1 }))
 hl.bind(mainMod .. " + 2", hl.dsp.focus({ workspace = 2 }))

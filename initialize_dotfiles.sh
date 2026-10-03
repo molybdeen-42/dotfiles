@@ -16,6 +16,7 @@ dotfiles=(
 	"fish"
 	"nvim"
 	"themes"
+	"cava"
 )
 
 for dotfile in ${dotfiles[@]}; do

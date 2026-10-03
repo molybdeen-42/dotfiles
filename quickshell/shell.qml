@@ -7,4 +7,5 @@ import "components"
 Scope {
 	FullBar {}
 	ThemeSwitcher {}
+	MusicMenu {}
 }

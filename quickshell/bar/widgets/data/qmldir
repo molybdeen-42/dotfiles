@@ -2,3 +2,7 @@ singleton Temperature Temperature.qml
 singleton Time Time.qml
 singleton Network Network.qml
 singleton Battery Battery.qml
+singleton Music Music.qml
+singleton Audio Audio.qml
+singleton Bluetooth Bluetooth.qml
+singleton Music Music.qml

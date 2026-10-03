@@ -24,6 +24,8 @@ protonvpn-app
 vim
 sed
 ttf-jetbrains-mono-nerd
+noto-fonts-cjk
+fontconfig
 tree-sitter
 tree-sitter-cli
 lua-language-server
@@ -35,3 +37,6 @@ shfmt
 python-black
 python-isort
 jdtls
+cava
+mpv
+bluez-utils
