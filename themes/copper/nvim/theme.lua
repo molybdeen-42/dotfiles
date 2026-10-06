@@ -65,13 +65,34 @@ M.lualine = {
 
 local c = M.colors
 
+local terminal_colors = {
+	[0] = c.bg,
+	[1] = c.notify,
+	[2] = c.positive,
+	[3] = c.warn,
+	[4] = c.accent,
+	[5] = c.gradient2,
+	[6] = c.accentSoft,
+	[7] = c.text,
+	[8] = c.borderBright,
+	[9] = c.notify,
+	[10] = c.positiveBright,
+	[11] = c.textMutedBright,
+	[12] = c.gradient1,
+	[13] = c.gradient3,
+	[14] = c.textDim,
+	[15] = c.widget,
+}
+
 local highlights = {
 	Normal = { fg = c.text, bg = c.bg },
 	NormalNC = { fg = c.text, bg = c.bg },
 	NormalFloat = { fg = c.text, bg = c.bgDark },
 	FloatBorder = { fg = c.border, bg = c.bgDark },
 	FloatTitle = { fg = c.accent, bg = c.bgDark, bold = true },
-	WinSeparator = { fg = c.border },
+	ToggleTermBorder = { fg = c.borderBright, bg = c.bg },
+	ToggleTermNormal = { fg = c.text, bg = c.bg },
+	WinSeparator = { fg = c.borderBright },
 	VertSplit = { fg = c.border },
 	MsgSeparator = { fg = c.border },
 	StatusLine = { fg = c.text, bg = c.surfaceBright },
@@ -209,6 +230,10 @@ local highlights = {
 
 function M.apply()
 	vim.opt.termguicolors = true
+
+	for i, color in pairs(terminal_colors) do
+		vim.g["terminal_color_" .. i] = color
+	end
 
 	for group, opts in pairs(highlights) do
 		vim.api.nvim_set_hl(0, group, opts)

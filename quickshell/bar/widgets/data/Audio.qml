@@ -96,7 +96,7 @@ Singleton {
 		property string percent: ""
 
 		command: ["bash", "-c",
-			"mkdir -p \\\"$(dirname '" + root.statePath + "')\\\" && " +
+			"mkdir -p \"$(dirname '" + root.statePath + "')\" && " +
 			"printf '%s' '" + percent + "' > '" + root.statePath + "'"
 		]
 	}

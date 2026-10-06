@@ -40,6 +40,14 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<leader>gf", vim.lsp.buf.format, {})
+		local lsp_format_blocklist = { "clangd", "lua_ls", "jdtls" }
+
+		vim.keymap.set("n", "<leader>gf", function()
+			vim.lsp.buf.format({
+				filter = function(client)
+					return not vim.tbl_contains(lsp_format_blocklist, client.name)
+				end,
+			})
+		end, {})
 	end,
 }

@@ -1,4 +1,10 @@
 function fish_greeting
+
+    # Stop the terminal greeting from being activated in the nvim terminal
+    if set -q NVIM
+        return
+    end
+
     set -l y (set_color FFD700) # yellow body
     set -l t (set_color 00AFAF) # teal outline/stripes
     set -l w (set_color FFFFFF) # white wing details
