@@ -40,3 +40,7 @@ jdtls
 cava
 mpv
 bluez-utils
+zoxide
+eza
+bat
+gcc

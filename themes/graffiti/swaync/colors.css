@@ -1,0 +1,10 @@
+/* Graffiti theme */
+
+@define-color bg #141a1b;
+@define-color border #2c3a3b;
+@define-color text #e3ebe6;
+@define-color text-alt #8aa39b;
+@define-color accent #cb58be;
+@define-color accent-alt #b85a66;
+@define-color accent-extra #c6c354;
+@define-color bg-alpha #141a1bE6;

@@ -1,0 +1,13 @@
+// Graffiti theme
+
+* {
+    bg: #141a1b;
+    border: #2c3a3b;
+    text: #e3ebe6;
+    text-alt: #8aa39b;
+    accent: #cb58be;
+    accent-alt: #b85a66;
+    accent-extra: #c6c354;
+    accent-alt-alpha: #cb58be33;
+    bg-alpha: #141a1bE6;
+}

@@ -1,0 +1,59 @@
+# Graffiti theme
+
+format = """
+$username@$hostname\
+$directory\
+$git_branch\
+$character
+"""
+
+right_format = "$cmd_duration$status$jobs$time"
+
+scan_timeout = 10
+
+[username]
+format = "[$user]($style)"
+style_user = "bold #cb58be"
+style_root = "bold #b85a66"
+show_always = true
+
+[hostname]
+format = "[$hostname]($style):"
+style = "bold #f49be6"
+ssh_only = false
+
+[directory]
+format = "[ $path/ ]($style)"
+style = "bold #59c2a5"
+truncation_length = 3
+truncate_to_repo = true
+
+[git_branch]
+format = "at [$branch(:$remote_branch) ]($style)"
+style = "bold #4ca658"
+
+[character]
+success_symbol = "[❯](bryellow)"
+error_symbol = "[❯](brred)"
+
+[time]
+disabled = false
+style = "#8aa39b"
+format = "[$time]($style) "
+time_format = "%H:%M:%S"
+
+[cmd_duration]
+min_time = 2000
+style = "#cb58be"
+format = "took [$duration]($style) "
+
+[status]
+disabled = false
+style = "#b85a66"
+format = "[$symbol $maybe_status]($style) "
+
+[jobs]
+threshold = 1
+symbol = "⚙ "
+style = "#cb58be"
+format = "[$number$symbol]($style)"

@@ -28,6 +28,7 @@ function shellsparce --description "Your personal shell assistant!"
 	echo "    frog"
 	echo "    mirror"
 	echo "    moon"
+	echo "    graffiti"
         return
     end
 
@@ -54,7 +55,7 @@ function shellsparce --description "Your personal shell assistant!"
 	    set -l flag $argv[4]
 
             switch "$theme"
-                case "blindfold" "copper" "forest" "city" "frog" "mirror" "moon"
+                case "blindfold" "copper" "forest" "city" "frog" "mirror" "moon" "graffiti"
                     /bin/bash "$HOME/.config/themes/change_theme.sh" $theme $flag &> /dev/null
                     return
             end 

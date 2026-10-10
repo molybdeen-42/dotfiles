@@ -59,5 +59,7 @@ return {
 		end
 
 		vim.keymap.set({ "n", "t" }, "<C-]>", swap_terminal_focus)
+
+		require("c-runner")
 	end,
 }

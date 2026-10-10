@@ -30,6 +30,9 @@ fi
 if [[ "$1" == "moon" ]]; then
 	exists="true"
 fi
+if [[ "$1" == "graffiti" ]]; then
+	exists="true"
+fi
 if [[ $exists == "false" ]]; then
 	echo "This theme is not supported."
 	exit 1
@@ -69,9 +72,9 @@ cat "$themepath/hypr/hyprlock.conf" >"$configpath/hypr/hyprlock.conf"
 swaync-client -rs
 
 if [[ "$2" == "-r" ]]; then
-	awww img -o eDP-1 "$themepath/wallpapers/$1_1_2880x1920.png" &
-	awww img -o DP-11 "$themepath/wallpapers/$1_1_2560x1440.png" &
-	awww img -o DP-9 "$themepath/wallpapers/$1_1_2560x1440.png" &
+	awww img --transition-type grow --transition-duration 2 --transition-step 90 --transition-pos 0.8,0.7 -o eDP-1 "$themepath/wallpapers/$1_1_2880x1920.png" &
+	awww img --transition-type grow --transition-duration 2 --transition-step 90 --transition-pos 0.8,0.7 -o DP-11 "$themepath/wallpapers/$1_1_2560x1440.png" &
+	awww img --transition-type grow --transition-duration 2 --transition-step 90 --transition-pos 0.8,0.7 -o DP-9 "$themepath/wallpapers/$1_1_1440x2560.png" &
 	wait
 	echo ""
 	echo "Reloading completed"
