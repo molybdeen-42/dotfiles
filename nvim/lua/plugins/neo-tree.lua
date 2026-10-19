@@ -12,7 +12,6 @@ return {
 				position = "right",
 			},
 		})
-		vim.keymap.set("n", "<leader>fs", ":Neotree toggle<CR>")
 		vim.keymap.set("n", "<leader>ff", function()
 			if vim.bo.filetype == "neo-tree" then
 				vim.cmd("wincmd p")

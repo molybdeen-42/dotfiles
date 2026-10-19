@@ -13,6 +13,7 @@ local FLAGS_WARN = table.concat({
 	"-Wundef",
 	"-Wwrite-strings",
 	"-fanalyzer",
+	"-Wno-error=analyzer-possible-null-dereference",
 }, " ")
 
 local FLAGS_SANITIZED = FLAGS_WARN .. " -g -fsanitize=address,undefined"
@@ -27,7 +28,7 @@ local function compile_and_run(flags)
 	vim.cmd("silent update")
 
 	local out = vim.fn.shellescape(out_path())
-	local cmd = string.format("gcc %s %s -o %s && %s", flags, vim.fn.shellescape(file), out, out)
+	local cmd = string.format("gcc %s %s -lm -o %s && %s", flags, vim.fn.shellescape(file), out, out)
 
 	local term = require("toggleterm.terminal").get_or_create_term(1)
 	local was_open = term:is_open()
@@ -60,7 +61,7 @@ vim.api.nvim_create_autocmd("FileType", {
 	callback = function()
 		vim.keymap.set("n", "<leader>cc", M.run, { buffer = true, desc = "Compile and run" })
 		vim.keymap.set("n", "<leader>cd", M.run_sanitized, { buffer = true, desc = "Compile and run (sanitized)" })
-		vim.opt_local.makeprg = "gcc " .. FLAGS_WARN .. " % -o %:p:h/%:t:r"
+		vim.opt_local.makeprg = "gcc " .. FLAGS_WARN .. " % -o %:p:h/%:t:r -lm"
 		vim.opt_local.errorformat = "%f:%l:%c:%m"
 	end,
 })

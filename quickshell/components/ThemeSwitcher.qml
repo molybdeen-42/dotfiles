@@ -1,6 +1,7 @@
 import Quickshell
 import Quickshell.Hyprland
 import Quickshell.Io
+import Quickshell.Wayland
 import QtQuick
 import QtQuick.Shapes
 import Qt5Compat.GraphicalEffects
@@ -11,7 +12,7 @@ Scope {
 
 	property bool open: false
 	property string selectorScreen: "eDP-1"
-	readonly property var themes: ["blindfold", "copper", "forest", "city", "frog", "mirror", "moon", "graffiti"]
+	readonly property var themes: ["blindfold", "copper", "forest", "city", "frog", "mirror", "moon", "graffiti", "ronin"]
 	property int selectedIndex: 0
 	property string currentTheme: ""
 
@@ -65,6 +66,7 @@ Scope {
 			color: "transparent"
 			exclusiveZone: -1
 			focusable: true
+			WlrLayershell.namespace: "themeswitcher"
 
 			anchors {
 				left: true
@@ -80,7 +82,7 @@ Scope {
 
 			Rectangle {
 				anchors.fill: parent
-				color: "#73000000"
+				color: "#26000000"
 			}
 
 			Item {

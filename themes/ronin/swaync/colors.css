@@ -1,0 +1,10 @@
+/* Ronin theme */
+
+@define-color bg #13171a;
+@define-color border #2e3539;
+@define-color text #e3e0e0;
+@define-color text-alt #8f8a90;
+@define-color accent #af5951;
+@define-color accent-alt #c06058;
+@define-color accent-extra #ca8e71;
+@define-color bg-alpha #13171aE6;

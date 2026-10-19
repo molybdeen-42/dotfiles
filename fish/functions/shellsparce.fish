@@ -19,6 +19,7 @@ function shellsparce --description "Your personal shell assistant!"
         echo "theme"
         echo "  current: Shows the current theme."
 	echo "  reload: Reload the current theme."
+	echo "  previews: Captures previews of all themes."
         echo "  themes: Shows the available themes."
         echo "  change: Allows you to change your theme."
         echo "    blindfold"
@@ -29,6 +30,7 @@ function shellsparce --description "Your personal shell assistant!"
 	echo "    mirror"
 	echo "    moon"
 	echo "    graffiti"
+	echo "    ronin"
         return
     end
 
@@ -41,12 +43,18 @@ function shellsparce --description "Your personal shell assistant!"
         end
 
 	if test "$functionality" = "reload"
-		/bin/bash "$HOME/.config/themes/change_theme.sh" $(cat "$HOME/.config/themes/current_theme.txt") -r &> /dev/null
+		/usr/bin/env "$HOME/.config/themes/change_theme.sh" $(cat "$HOME/.config/themes/current_theme.txt") -r &> /dev/null
+		return
+	end
+
+	if test "$functionality" = "previews"
+		echo "Capturing previews of all themes, this may take a while..."
+		/usr/bin/env bash "$HOME/.config/themes/capture_previews.sh"
 		return
 	end
 
         if test "$functionality" = "themes"
-            echo "The currently supported themes are: blindfold, copper, spooky, forest, city, frog, mirror & moon"
+            echo "The currently supported themes are: blindfold, copper, forest, city, frog, mirror, moon, graffiti & ronin"
             return
         end
 
@@ -55,8 +63,8 @@ function shellsparce --description "Your personal shell assistant!"
 	    set -l flag $argv[4]
 
             switch "$theme"
-                case "blindfold" "copper" "forest" "city" "frog" "mirror" "moon" "graffiti"
-                    /bin/bash "$HOME/.config/themes/change_theme.sh" $theme $flag &> /dev/null
+                case "blindfold" "copper" "forest" "city" "frog" "mirror" "moon" "graffiti" "ronin"
+                    /usr/bin/env bash "$HOME/.config/themes/change_theme.sh" $theme $flag &> /dev/null
                     return
             end 
         end

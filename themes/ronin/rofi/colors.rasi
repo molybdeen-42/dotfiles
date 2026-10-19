@@ -1,0 +1,13 @@
+// Ronin theme
+
+* {
+    bg: #13171a;
+    border: #2e3539;
+    text: #e3e0e0;
+    text-alt: #8f8a90;
+    accent: #af5951;
+    accent-alt: #c06058;
+    accent-extra: #ca8e71;
+    accent-alt-alpha: #af595133;
+    bg-alpha: #13171aE6;
+}

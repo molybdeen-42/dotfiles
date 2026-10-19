@@ -1,0 +1,59 @@
+# Ronin theme
+
+format = """
+$username@$hostname\
+$directory\
+$git_branch\
+$character
+"""
+
+right_format = "$cmd_duration$status$jobs$time"
+
+scan_timeout = 10
+
+[username]
+format = "[$user]($style)"
+style_user = "bold #af5951"
+style_root = "bold #c06058"
+show_always = true
+
+[hostname]
+format = "[$hostname]($style):"
+style = "bold #d3a5a0"
+ssh_only = false
+
+[directory]
+format = "[ $path/ ]($style)"
+style = "bold #ca8e71"
+truncation_length = 3
+truncate_to_repo = true
+
+[git_branch]
+format = "at [$branch(:$remote_branch) ]($style)"
+style = "bold #7a817d"
+
+[character]
+success_symbol = "[❯](bryellow)"
+error_symbol = "[❯](brred)"
+
+[time]
+disabled = false
+style = "#8f8a90"
+format = "[$time]($style) "
+time_format = "%H:%M:%S"
+
+[cmd_duration]
+min_time = 2000
+style = "#af5951"
+format = "took [$duration]($style) "
+
+[status]
+disabled = false
+style = "#c06058"
+format = "[$symbol $maybe_status]($style) "
+
+[jobs]
+threshold = 1
+symbol = "⚙ "
+style = "#af5951"
+format = "[$number$symbol]($style)"

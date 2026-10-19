@@ -22,6 +22,14 @@ hl.window_rule({
     no_focus = true,
 })
 
+hl.layer_rule({
+    name = "theme-switcher-blur",
+    match = {
+        namespace = "^themeswitcher$",
+    },
+    blur = true,
+})
+
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("WLR_NO_HARDWARE_CURSORS", "1")
