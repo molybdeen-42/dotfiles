@@ -18,18 +18,7 @@ local FLAGS_WARN = table.concat({
 
 local FLAGS_SANITIZED = FLAGS_WARN .. " -g -fsanitize=address,undefined"
 
-local function compile_and_run(flags)
-	local file = vim.fn.expand("%:p")
-	if vim.bo.filetype ~= "c" or file == "" then
-		vim.notify("Not a C file", vim.log.levels.WARN)
-		return
-	end
-
-	vim.cmd("silent update")
-
-	local out = vim.fn.shellescape(out_path())
-	local cmd = string.format("gcc %s %s -lm -o %s && %s", flags, vim.fn.shellescape(file), out, out)
-
+local function send_to_terminal(cmd)
 	local term = require("toggleterm.terminal").get_or_create_term(1)
 	local was_open = term:is_open()
 	if not was_open then
@@ -46,6 +35,40 @@ local function compile_and_run(flags)
 		vim.defer_fn(send, 300)
 	end
 end
+
+local function compile_and_run(flags)
+	local file = vim.fn.expand("%:p")
+	if vim.bo.filetype ~= "c" or file == "" then
+		vim.notify("Not a C file", vim.log.levels.WARN)
+		return
+	end
+
+	vim.cmd("silent update")
+
+	local out = vim.fn.shellescape(out_path())
+	local cmd = string.format("gcc %s %s -lm -o %s && %s", flags, vim.fn.shellescape(file), out, out)
+
+	send_to_terminal(cmd)
+end
+
+function M.make()
+	local file = vim.api.nvim_buf_get_name(0)
+	local start = file ~= "" and vim.fs.dirname(file) or vim.fn.getcwd()
+	local makefile = vim.fs.find({ "GNUmakefile", "makefile", "Makefile" }, {
+		path = start,
+		upward = true,
+		type = "file",
+	})[1]
+	if not makefile then
+		vim.notify("No Makefile found in this directory or its parents", vim.log.levels.WARN)
+		return
+	end
+
+	vim.cmd("wall")
+	send_to_terminal("make -C " .. vim.fn.shellescape(vim.fs.dirname(makefile)))
+end
+
+vim.keymap.set("n", "<leader>cm", M.make, { desc = "Build project with make" })
 
 function M.run()
 	compile_and_run(FLAGS_WARN)

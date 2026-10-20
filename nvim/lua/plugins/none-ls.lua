@@ -5,6 +5,9 @@ return {
 		local formatting = null_ls.builtins.formatting
 		null_ls.setup({
 			sources = {
+				-- Markdown 
+				formatting.prettier,
+
 				-- C
 				formatting.clang_format.with({
 					extra_args = {

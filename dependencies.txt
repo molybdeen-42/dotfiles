@@ -37,6 +37,7 @@ shfmt
 python-black
 python-isort
 jdtls
+prettier
 cava
 mpv
 bluez-utils
