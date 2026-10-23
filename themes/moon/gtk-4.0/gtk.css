@@ -1,0 +1,93 @@
+/* Moon palette for the shared GTK 4 base. */
+@define-color shellsparce_success_bg_color #6c64a8;
+@define-color shellsparce_window_bg_color #141726;
+@define-color shellsparce_warning_bg_color #b8a45f;
+@define-color shellsparce_error_bg_color #c95f5f;
+@define-color shellsparce_accent_color #8caad6;
+@define-color shellsparce_window_fg_color #e2e8f4;
+@define-color shellsparce_view_bg_color #121421;
+@define-color shellsparce_headerbar_bg_color #1d202f;
+@define-color shellsparce_borders #3a4266;
+
+/* Theme palette overrides */
+/* Moon palette, matching quickshell/Theme.qml. */
+/* Named colors also cover widgets using the older Adwaita color API. */
+@define-color accent_bg_color #7095cc;
+@define-color accent_fg_color #141726;
+@define-color accent_color #8caad6;
+@define-color window_bg_color #141726;
+@define-color window_fg_color #e2e8f4;
+@define-color view_bg_color #121421;
+@define-color view_fg_color #e2e8f4;
+@define-color headerbar_bg_color #1d202f;
+@define-color headerbar_fg_color #e2e8f4;
+@define-color headerbar_backdrop_color #141726;
+@define-color headerbar_border_color #3a4266;
+@define-color sidebar_bg_color #1d202f;
+@define-color sidebar_fg_color #e2e8f4;
+@define-color sidebar_backdrop_color #1d202f;
+@define-color sidebar_border_color #3a4266;
+@define-color secondary_sidebar_bg_color #1d202f;
+@define-color secondary_sidebar_fg_color #e2e8f4;
+@define-color secondary_sidebar_backdrop_color #1d202f;
+@define-color card_bg_color #1d202f;
+@define-color card_fg_color #e2e8f4;
+@define-color dialog_bg_color #1d202f;
+@define-color dialog_fg_color #e2e8f4;
+@define-color popover_bg_color #1d202f;
+@define-color popover_fg_color #e2e8f4;
+@define-color error_bg_color #c95f5f;
+@define-color error_fg_color #141726;
+@define-color error_color #c95f5f;
+@define-color warning_bg_color #b8a45f;
+@define-color warning_fg_color #141726;
+@define-color warning_color #b8a45f;
+@define-color success_bg_color #6c64a8;
+@define-color success_fg_color #141726;
+@define-color success_color #6c64a8;
+@define-color borders #3a4266;
+@define-color theme_bg_color @window_bg_color;
+@define-color theme_fg_color @window_fg_color;
+@define-color theme_base_color @view_bg_color;
+@define-color theme_text_color @view_fg_color;
+@define-color theme_selected_bg_color @accent_bg_color;
+@define-color theme_selected_fg_color @accent_fg_color;
+
+:root {
+  --accent-bg-color: #7095cc;
+  --accent-fg-color: #141726;
+  --accent-color: #8caad6;
+  --window-bg-color: #141726;
+  --window-fg-color: #e2e8f4;
+  --view-bg-color: #121421;
+  --view-fg-color: #e2e8f4;
+  --headerbar-bg-color: #1d202f;
+  --headerbar-fg-color: #e2e8f4;
+  --headerbar-backdrop-color: #141726;
+  --headerbar-border-color: #3a4266;
+  --sidebar-bg-color: #1d202f;
+  --sidebar-fg-color: #e2e8f4;
+  --sidebar-backdrop-color: #1d202f;
+  --sidebar-border-color: #3a4266;
+  --secondary-sidebar-bg-color: #1d202f;
+  --secondary-sidebar-fg-color: #e2e8f4;
+  --secondary-sidebar-backdrop-color: #1d202f;
+  --card-bg-color: #1d202f;
+  --card-fg-color: #e2e8f4;
+  --dialog-bg-color: #1d202f;
+  --dialog-fg-color: #e2e8f4;
+  --popover-bg-color: #1d202f;
+  --popover-fg-color: #e2e8f4;
+  --error-bg-color: #c95f5f;
+  --error-fg-color: #141726;
+  --error-color: #c95f5f;
+  --warning-bg-color: #b8a45f;
+  --warning-fg-color: #141726;
+  --warning-color: #b8a45f;
+  --success-bg-color: #6c64a8;
+  --success-fg-color: #141726;
+  --success-color: #6c64a8;
+  --border-color: #3a4266;
+  --dim-opacity: 0.65;
+}
+

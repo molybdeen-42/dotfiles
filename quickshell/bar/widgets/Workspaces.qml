@@ -54,18 +54,10 @@ Item {
     function iconForWorkspace(ws) {
         const dep = root.refreshCount
         const tops = Array.from(ws.toplevels.values)
-        if (tops.length === 0) return ""
-
-        for (let i = 0; i < tops.length; i++) {
-            if (!tops[i]) continue
-            if (tops[i].activated) {
-                const ipc = tops[i].lastIpcObject
-                return ipc ? iconForWindow(ipc) : ""
-            }
-        }
-
-        const last = tops[tops.length - 1]
-        return (last && last.lastIpcObject) ? iconForWindow(last.lastIpcObject) : ""
+        return tops
+            .filter(top => top)
+            .map(top => iconForWindow(top.lastIpcObject || {}))
+            .join("  ")
     }
 
     Timer {

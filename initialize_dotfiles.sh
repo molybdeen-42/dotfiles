@@ -17,6 +17,7 @@ dotfiles=(
 	"nvim"
 	"themes"
 	"cava"
+	"gtk-4.0"
 )
 
 for dotfile in ${dotfiles[@]}; do
@@ -35,6 +36,16 @@ if [[ -L "$config/starship.toml" ]] || [[ -f "$config/starship.toml" ]]; then
 	rm -rfi "$config/starship.toml"
 fi
 ln -s "$dotfiles_path/starship/starship.toml" "$config/starship.toml"
+
+# Install the prebuilt folder and file icon themes.
+icons_path="${XDG_DATA_HOME:-$HOME/.local/share}/icons"
+mkdir -p "$icons_path"
+for theme_path in "$dotfiles_path"/themes/*; do
+	[[ -f "$theme_path/gtk-4.0/icons/index.theme" ]] || continue
+	icon_target="$icons_path/$(basename "$theme_path")"
+	mkdir -p "$icon_target"
+	cp -a "$theme_path/gtk-4.0/icons/." "$icon_target/"
+done
 
 # Reloading configs
 echo "[+] Reloading configuration files"

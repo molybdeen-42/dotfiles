@@ -57,6 +57,15 @@ cat "$themepath/kitty/theme.conf" >"$configpath/kitty/theme.conf"
 echo "Switching quickshell theme..."
 cat "$themepath/quickshell/Theme.qml" >"$configpath/quickshell/themes/Theme.qml"
 
+echo "Switching GTK 4 theme..."
+cat "$themepath/gtk-4.0/gtk.css" >"$configpath/gtk-4.0/gtk.css"
+
+echo "Switching folder and file icon colors..."
+sed -i "s/^gtk-icon-theme-name=.*/gtk-icon-theme-name=$1/" "$configpath/gtk-4.0/settings.ini"
+gsettings set org.gnome.desktop.interface icon-theme "$1"
+
+nautilus -q
+
 echo "Switching rofi theme..."
 cat "$themepath/rofi/colors.rasi" >"$configpath/rofi/themes/colors.rasi"
 

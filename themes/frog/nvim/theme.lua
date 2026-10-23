@@ -240,6 +240,8 @@ function M.apply()
 	for group, opts in pairs(highlights) do
 		vim.api.nvim_set_hl(0, group, opts)
 	end
+
+	require("markdown-theme").apply(c)
 end
 
 return M

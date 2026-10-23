@@ -1,7 +1,6 @@
 # Prompt appearance
 starship init fish | source
 
-
 # Text editor
 set -gx EDITOR vim
 

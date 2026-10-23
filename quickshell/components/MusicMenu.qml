@@ -31,9 +31,7 @@ Scope {
 
 	function sortedSinks() {
 		const list = Audio.sinks.slice()
-		const active = Music.audioDevice !== "" && Music.audioDevice !== "auto"
-			? Music.audioDevice
-			: Audio.defaultSink
+		const active = Audio.defaultSink
 		const i = list.findIndex(s => s.name === active)
 		if (i > 0) {
 			const item = list[i]
@@ -818,10 +816,7 @@ Scope {
 								id: deviceList
 								z: 2
 
-								readonly property string activeSink:
-									Music.audioDevice !== "" && Music.audioDevice !== "auto"
-									? Music.audioDevice
-									: Audio.defaultSink
+								readonly property string activeSink: Audio.defaultSink
 
 								visible: root.devicesOpen
 								width: parent.width

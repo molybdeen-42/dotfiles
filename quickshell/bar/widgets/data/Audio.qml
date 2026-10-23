@@ -105,7 +105,13 @@ Singleton {
 		id: switchProc
 
 		property string target: ""
-		command: ["pactl", "set-default-sink", target]
+		command: ["bash", "-c",
+			"pactl set-default-sink \"$1\" || exit; " +
+			"pactl list short sink-inputs | while read -r input rest; do " +
+			"pactl move-sink-input \"$input\" \"$1\"; " +
+			"done",
+			"qs-audio-switch", target
+		]
 	}
 
 	Timer {

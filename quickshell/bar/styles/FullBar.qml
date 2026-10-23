@@ -29,19 +29,6 @@ Scope {
 	readonly property int extendActive: 6
 
 	// Gradients
-	readonly property Gradient activeGradient: LinearGradient {
-    		x1: 0
-    		y1: 0
-    		x2: root.pillWidth + root.extendActive
-    		y2: 0
-    		GradientStop { position: 0; color: Theme.gradient1 }
-    		GradientStop { position: 0.25; color: Theme.gradient1 }
-    		GradientStop { position: 0.50; color: Theme.gradient2 }
-    		GradientStop { position: 0.75; color: Theme.gradient3 }
-    		GradientStop { position: 0.97; color: Theme.gradient4 }
-    		GradientStop { position: 1; color: Theme.gradient5 }
-	}
-
 	readonly property Gradient inactiveGradient: RadialGradient {
 		focalX: 0
 		focalY: 0
@@ -125,7 +112,7 @@ Scope {
 
 							readonly property bool active: modelData === workspaces.active
 
-							width: pillWidth + (active ? extendActive : 0)
+							width: Math.max(pillWidth, workspaceIcons.implicitWidth + 12) + (active ? extendActive : 0)
 							height: pillHeight
 
 							antialiasing: true
@@ -135,6 +122,18 @@ Scope {
 									duration: 300
 									easing.type: Easing.InOutQuad
 								}
+							}
+
+							readonly property Gradient activeGradient: LinearGradient {
+								x1: 0
+								y1: 0
+								x2: wsPill.width
+								y2: 0
+								GradientStop { position: 0; color: Theme.gradient1 }
+								GradientStop { position: 0.25; color: Theme.gradient1 }
+								GradientStop { position: 0.50; color: Theme.gradient2 }
+								GradientStop { position: 0.75; color: Theme.gradient3 }
+								GradientStop { position: 1; color: Theme.gradient4 }
 							}
 
 							ShapePath {
@@ -165,6 +164,7 @@ Scope {
 
 							Text {
 								anchors.centerIn: parent
+								id: workspaceIcons
 								text: workspaces.iconForWorkspace(wsPill.modelData)
 								font.family: Theme.fontFamily
 								font.pixelSize: Theme.fontSizeNormal
