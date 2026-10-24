@@ -240,6 +240,7 @@ function M.apply()
 	end
 
 	require("markdown-theme").apply(c)
+	require("git-theme").apply(c)
 end
 
 return M

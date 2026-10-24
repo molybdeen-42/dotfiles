@@ -1,7 +1,7 @@
-return { 
+return {
 	"nvim-neo-tree/neo-tree.nvim",
 	branch = "v3.x",
-	dependencies = { 
+	dependencies = {
 		"nvim-tree/nvim-web-devicons",
 		"nvim-lua/plenary.nvim",
 		"MunifTanjim/nui.nvim",
@@ -10,6 +10,12 @@ return {
 		require("neo-tree").setup({
 			window = {
 				position = "right",
+			},
+			filesystem = {
+				filtered_items = {
+					hide_gitignored = false,
+					hide_dotfiles = false,
+				},
 			},
 		})
 		vim.keymap.set("n", "<leader>ff", function()

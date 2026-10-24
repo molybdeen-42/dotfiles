@@ -7,7 +7,7 @@ local function tint(background, foreground, amount)
 		local fg = tonumber(foreground:sub(offset, offset + 1), 16)
 		channels[#channels + 1] = math.floor(bg + (fg - bg) * amount + 0.5)
 	end
-	return string.format("#%02x%02x%02x", unpack(channels))
+	return string.format("#%02x%02x%02x", channels[1], channels[2], channels[3])
 end
 
 function M.apply(c)
