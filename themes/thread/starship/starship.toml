@@ -1,0 +1,59 @@
+# Thread theme
+
+format = """
+$username@$hostname\
+$directory\
+$git_branch\
+$character
+"""
+
+right_format = "$cmd_duration$status$jobs$time"
+
+scan_timeout = 10
+
+[username]
+format = "[$user]($style)"
+style_user = "bold #48b5f5"
+style_root = "bold #f05c70"
+show_always = true
+
+[hostname]
+format = "[$hostname]($style):"
+style = "bold #a6ddff"
+ssh_only = false
+
+[directory]
+format = "[ $path/ ]($style)"
+style = "bold #cd6676"
+truncation_length = 3
+truncate_to_repo = true
+
+[git_branch]
+format = "at [$branch(:$remote_branch) ]($style)"
+style = "bold #7bd4c2"
+
+[character]
+success_symbol = "[❯](#cd6676)"
+error_symbol = "[❯](brred)"
+
+[time]
+disabled = false
+style = "#8ca3c2"
+format = "[$time]($style) "
+time_format = "%H:%M:%S"
+
+[cmd_duration]
+min_time = 2000
+style = "#48b5f5"
+format = "took [$duration]($style) "
+
+[status]
+disabled = false
+style = "#f05c70"
+format = "[$symbol $maybe_status]($style) "
+
+[jobs]
+threshold = 1
+symbol = "⚙ "
+style = "#48b5f5"
+format = "[$number$symbol]($style)"

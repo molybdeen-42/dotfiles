@@ -36,6 +36,9 @@ fi
 if [[ "$1" == "ronin" ]]; then
 	exists="true"
 fi
+if [[ "$1" == "thread" ]]; then
+	exists="true"
+fi
 if [[ $exists == "false" ]]; then
 	echo "This theme is not supported."
 	exit 1

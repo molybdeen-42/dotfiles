@@ -31,6 +31,7 @@ function shellsparce --description "Your personal shell assistant!"
 	echo "    moon"
 	echo "    graffiti"
 	echo "    ronin"
+	echo "    thread"
         return
     end
 
@@ -54,7 +55,7 @@ function shellsparce --description "Your personal shell assistant!"
 	end
 
         if test "$functionality" = "themes"
-            echo "The currently supported themes are: blindfold, copper, forest, city, frog, mirror, moon, graffiti & ronin"
+            echo "The currently supported themes are: blindfold, copper, forest, city, frog, mirror, moon, graffiti, ronin & thread"
             return
         end
 
@@ -63,7 +64,7 @@ function shellsparce --description "Your personal shell assistant!"
 	    set -l flag $argv[4]
 
             switch "$theme"
-                case "blindfold" "copper" "forest" "city" "frog" "mirror" "moon" "graffiti" "ronin"
+                case "blindfold" "copper" "forest" "city" "frog" "mirror" "moon" "graffiti" "ronin" "thread"
                     /usr/bin/env bash "$HOME/.config/themes/change_theme.sh" $theme $flag &> /dev/null
                     return
             end 

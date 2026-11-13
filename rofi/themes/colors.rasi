@@ -1,13 +1,13 @@
-// Mirror theme
+// Ronin theme
 
 * {
-    bg: #12100d;
-    border: #3a3226;
-    text: #e6e0d4;
-    text-alt: #92896e;
-    accent: #b39a5f;
-    accent-alt: #b85a4a;
-    accent-extra: #b08560;
-    accent-alt-alpha: #b39a5f33;
-    bg-alpha: #12100dE6;
+    bg: #13171a;
+    border: #2e3539;
+    text: #e3e0e0;
+    text-alt: #8f8a90;
+    accent: #af5951;
+    accent-alt: #c06058;
+    accent-extra: #ca8e71;
+    accent-alt-alpha: #af595133;
+    bg-alpha: #13171aE6;
 }

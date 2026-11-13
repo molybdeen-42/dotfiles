@@ -1,8 +1,8 @@
--- Mirror theme
-inactive = "rgba(1c1a14aa)"
+-- Ronin theme
+inactive = "rgba(1c2225aa)"
 
-gradient1 = "rgba(b39a5fff)"
-gradient2 = "rgba(8f7a4aff)"
-gradient3 = "rgba(6b5c38ff)"
-gradient4 = "rgba(3e3626ff)"
-gradient5 = "rgba(12100dff)"
+gradient1 = "rgba(af5951ff)"
+gradient2 = "rgba(ca8e71ff)"
+gradient3 = "rgba(9d7887ff)"
+gradient4 = "rgba(51363eff)"
+gradient5 = "rgba(13171aff)"

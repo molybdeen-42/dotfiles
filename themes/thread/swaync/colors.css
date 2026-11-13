@@ -1,0 +1,10 @@
+/* Thread theme */
+
+@define-color bg #0b1224;
+@define-color border #293c5b;
+@define-color text #eaf5ff;
+@define-color text-alt #8ca3c2;
+@define-color accent #48b5f5;
+@define-color accent-alt #f05c70;
+@define-color accent-extra #cd6676;
+@define-color bg-alpha #0b1224E6;

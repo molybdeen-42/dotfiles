@@ -2,7 +2,7 @@
 
 sleep 5
 
-themes=("blindfold" "copper" "forest" "city" "frog" "mirror" "moon" "graffiti" "ronin")
+themes=("blindfold" "copper" "forest" "city" "frog" "mirror" "moon" "graffiti" "ronin" "thread")
 output="eDP-1"
 previewdir="$HOME/.config/themes/previews"
 

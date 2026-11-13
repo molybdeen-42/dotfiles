@@ -12,7 +12,7 @@ Scope {
 
 	property bool open: false
 	property string selectorScreen: "eDP-1"
-	readonly property var themes: ["blindfold", "copper", "forest", "city", "frog", "mirror", "moon", "graffiti", "ronin"]
+	readonly property var themes: ["blindfold", "copper", "forest", "city", "frog", "mirror", "moon", "graffiti", "ronin", "thread"]
 	property int selectedIndex: 0
 	property string currentTheme: ""
 

@@ -1,0 +1,13 @@
+// Thread theme
+
+* {
+    bg: #0b1224;
+    border: #293c5b;
+    text: #eaf5ff;
+    text-alt: #8ca3c2;
+    accent: #48b5f5;
+    accent-alt: #f05c70;
+    accent-extra: #cd6676;
+    accent-alt-alpha: #48b5f533;
+    bg-alpha: #0b1224E6;
+}

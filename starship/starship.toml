@@ -1,4 +1,4 @@
-# Mirror theme
+# Ronin theme
 
 format = """
 $username@$hostname\
@@ -13,24 +13,24 @@ scan_timeout = 10
 
 [username]
 format = "[$user]($style)"
-style_user = "bold #b39a5f"
-style_root = "bold #b85a4a"
+style_user = "bold #af5951"
+style_root = "bold #c06058"
 show_always = true
 
 [hostname]
 format = "[$hostname]($style):"
-style = "bold #c9b68a"
+style = "bold #d3a5a0"
 ssh_only = false
 
 [directory]
 format = "[ $path/ ]($style)"
-style = "bold #8f7a4a"
+style = "bold #ca8e71"
 truncation_length = 3
 truncate_to_repo = true
 
 [git_branch]
 format = "at [$branch(:$remote_branch) ]($style)"
-style = "bold #8a8f66"
+style = "bold #7a817d"
 
 [character]
 success_symbol = "[❯](bryellow)"
@@ -38,22 +38,22 @@ error_symbol = "[❯](brred)"
 
 [time]
 disabled = false
-style = "#92896e"
+style = "#8f8a90"
 format = "[$time]($style) "
 time_format = "%H:%M:%S"
 
 [cmd_duration]
 min_time = 2000
-style = "#b39a5f"
+style = "#af5951"
 format = "took [$duration]($style) "
 
 [status]
 disabled = false
-style = "#b85a4a"
+style = "#c06058"
 format = "[$symbol $maybe_status]($style) "
 
 [jobs]
 threshold = 1
 symbol = "⚙ "
-style = "#b39a5f"
+style = "#af5951"
 format = "[$number$symbol]($style)"
